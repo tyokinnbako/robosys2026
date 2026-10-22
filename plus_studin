@@ -1,15 +1,8 @@
 #!/usr/bin/python3
 import sys
 
-x = 0                     #もともと0.0だったのを0に変更
+x = 0.0
 for line in sys.stdin:
-<<<<<<< HEAD
-    x += tonum(line.rstrip())
-=======
-    try:
-        x += int(line)    #intは文字列を整数に（失敗すると例外発生）
-    except ValueError:    #第3回で見たエラーの名前
-        x += float(line)
->>>>>>> dev
-
+    line = line.rstrip()    #for文の下にこの行を挿入
+    x += tonum(line)
 print(x)
